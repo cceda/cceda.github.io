@@ -289,7 +289,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-08T16:54:28+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-08T17:01:25+08:00">
                 2020-05-08
               </time>
             
@@ -376,22 +376,22 @@
 </ol>
 <p>在深入探讨CMOS基本知识之前，让我们讨论并了解RC的基础。 在大规模集成电路领域里，非常需要完全了解RC，这在复杂的分析中有很大帮助。 我要说的是，如果我们对所有基本概念都非常了解，那么我们可以很容易地分析和解决任何问题。  </p>
 <h3 id="RC（为什么RC很重要？）"><a href="#RC（为什么RC很重要？）" class="headerlink" title="RC（为什么RC很重要？）"></a>RC（为什么RC很重要？）</h3><p>只使用R＆C不能建立完整而准确的CMOS模型。准确地对CMOS建模需要数百个参数（LEVEL 54 BSIM4.0模型）。 但是对于数字设计和PD工程师而言，对MOSFET的抽象层次的了解肯定会有助于理解和分析复杂的电路和问题。 因此，我建议您彻底了解CMOS的RC模型。</p>
-<h3 id="电阻效应（MOSFET的宽度）"><a href="#电阻效应（MOSFET的宽度）" class="headerlink" title="电阻效应（MOSFET的宽度）"></a>电阻效应（MOSFET的宽度）</h3><p>一个RC电路中，R = 100k-Ohm和C = 10pF。 电流I与电阻R成反比。如果R高，则电流将减小，因此需要更多时间为负载电容器充电。 参见下面的电路，V（n001）[绿色]是电源，V（n002）[蓝色]是电容器两端的电压。 观察电容器两端的电压曲线图，由于电阻较高，因此充电时间较长。<br><img src="CMOS_basic_process_overvidw/RC-100K-1.png" alt="RC-100K-1"><br>让我们将电阻R降低到10k欧姆。 随着R的减小，I增大，因此电容器C的充电/放电时间减少。 请参考下面的电路。<br><img src="CMOS_basic_process_overvidw/C-10pF.png" alt="RC-10K-1"><br>现在让我们将这种理解扩展到MOSFET。 MOSFET中的漏极电流  </p>
+<h3 id="电阻效应（MOSFET的宽度）"><a href="#电阻效应（MOSFET的宽度）" class="headerlink" title="电阻效应（MOSFET的宽度）"></a>电阻效应（MOSFET的宽度）</h3><p>一个RC电路中，R = 100k-Ohm和C = 10pF。 电流I与电阻R成反比。如果R高，则电流将减小，因此需要更多时间为负载电容器充电。 参见下面的电路，V（n001）[绿色]是电源，V（n002）[蓝色]是电容器两端的电压。 观察电容器两端的电压曲线图，由于电阻较高，因此充电时间较长。<br><img src="/.com//RC-100K-1.png" alt="RC-100K-1"><br>让我们将电阻R降低到10k欧姆。 随着R的减小，I增大，因此电容器C的充电/放电时间减少。 请参考下面的电路。<br><img src="/.com//C-10pF.png" alt="RC-10K-1"><br>现在让我们将这种理解扩展到MOSFET。 MOSFET中的漏极电流  </p>
 <blockquote>
 <p>Id = u * Cox * W * sq（Vgs-Vt）/ 2L   </p>
 </blockquote>
 <p>MOSFET的导通电阻取决于W（宽度）＆L（长度）。 W值越高，MOSFET的电阻和载流能力越低。<br><strong>“因此，增加MOSFET的宽度可以减少负载电容器的充电和放电时间（充电和放电时间只不过是上升和下降时间而已）”。 在数字电路实现中（综合和PnR），宽度可以通过使用不同的驱动强度单元来改变。 （例如BUF-D1（w = 1u），BUF-D2（w = 2u），BUF-D3（w = 3u）…）”</strong><br>“通过增加器件的宽度可以增加通过MOSFET的电流，从而减少上升时间/下降时间（负载电容器的充电/充电时间）”</p>
-<h3 id="电容效果（负载上限-扇出）"><a href="#电容效果（负载上限-扇出）" class="headerlink" title="电容效果（负载上限/扇出）"></a>电容效果（负载上限/扇出）</h3><p><img src="CMOS_basic_process_overvidw/C-100pF.png" alt="cap"><br><img src="CMOS_basic_process_overvidw/C-10pF.png" alt="RC-10K-1"></p>
-<h3 id="RC-Model-of-a-Buffer"><a href="#RC-Model-of-a-Buffer" class="headerlink" title="RC Model of a Buffer"></a>RC Model of a Buffer</h3><p><img src="CMOS_basic_process_overvidw/RC-Rep-Of-Buffer.png" alt="buffer"></p>
-<h3 id="CMOS-Basics"><a href="#CMOS-Basics" class="headerlink" title="CMOS Basics"></a>CMOS Basics</h3><p><img src="CMOS_basic_process_overvidw/Cmos_impurity_profile.png" alt="cmos"><br>By Reza Mirhosseini – originally uploaded to en.wikipedia (file log), Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=12271062" target="_blank" rel="noopener">Link</a></p>
+<h3 id="电容效果（负载上限-扇出）"><a href="#电容效果（负载上限-扇出）" class="headerlink" title="电容效果（负载上限/扇出）"></a>电容效果（负载上限/扇出）</h3><p><img src="/.com//C-100pF.png" alt="cap"><br><img src="/.com//C-10pF.png" alt="RC-10K-1"></p>
+<h3 id="RC-Model-of-a-Buffer"><a href="#RC-Model-of-a-Buffer" class="headerlink" title="RC Model of a Buffer"></a>RC Model of a Buffer</h3><p><img src="/.com//RC-Rep-Of-Buffer.png" alt="buffer"></p>
+<h3 id="CMOS-Basics"><a href="#CMOS-Basics" class="headerlink" title="CMOS Basics"></a>CMOS Basics</h3><p><img src="/.com//Cmos_impurity_profile.png" alt="cmos"><br>By Reza Mirhosseini – originally uploaded to en.wikipedia (file log), Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=12271062" target="_blank" rel="noopener">Link</a></p>
 <h3 id="为什么-PMOS-比-NMOS-慢"><a href="#为什么-PMOS-比-NMOS-慢" class="headerlink" title="为什么 PMOS 比 NMOS 慢?"></a>为什么 PMOS 比 NMOS 慢?</h3><p>大多数答案将停留在“空穴的迁移率小于半导体中电子的迁移率”。 显然，下一个问题将是“为什么？”<br>为了理解这个概念，让我们回到能带图的基础。</p>
-<p><img src="CMOS_basic_process_overvidw/BandDiagram.png" alt="cmos"><br>导电电子（自由电子）在导带中传播，价电子（空穴）在价带中传播。 在施加的电场中，价电子不能像自由电子那样自由地运动，因为它们的运动受到限制。 如果其有效质量较小并且散射事件之间的时间较大，则粒子在半导体中的迁移率较大。<br>因此，电子的迁移率大于空穴的迁移率。 “现在我们了解了为什么PMOS比NMOS慢”<br>简而言之，与导带中的自由电子相比，<strong>“价带中的孔的运动需要更多的能量（电压）”</strong><br>由于这种迁移率不匹配，因此在设计标准逻辑单元时会出现beta比率。 我们还需要用于时钟网络的特殊单元，其上升和下降时间非常平衡。 为什么时钟单元需要这种平衡？ 我们将在CTS培训课程中对此进行讨论。  </p>
+<p><img src="/.com//BandDiagram.png" alt="cmos"><br>导电电子（自由电子）在导带中传播，价电子（空穴）在价带中传播。 在施加的电场中，价电子不能像自由电子那样自由地运动，因为它们的运动受到限制。 如果其有效质量较小并且散射事件之间的时间较大，则粒子在半导体中的迁移率较大。<br>因此，电子的迁移率大于空穴的迁移率。 “现在我们了解了为什么PMOS比NMOS慢”<br>简而言之，与导带中的自由电子相比，<strong>“价带中的孔的运动需要更多的能量（电压）”</strong><br>由于这种迁移率不匹配，因此在设计标准逻辑单元时会出现beta比率。 我们还需要用于时钟网络的特殊单元，其上升和下降时间非常平衡。 为什么时钟单元需要这种平衡？ 我们将在CTS培训课程中对此进行讨论。  </p>
 <h2 id="制程-工艺概述"><a href="#制程-工艺概述" class="headerlink" title="制程/工艺概述"></a>制程/工艺概述</h2><p>大多数半导体巨头在工艺技术方面进行了大量研究。 对超低功耗，高性能，小尺寸和低成本IC的需求不断增长，这使Fab/公司为该研究投入了更多资金。 传统的平面体工艺有许多问题需要进一步扩展（例如漏电流和短通道效应）。 到目前为止，有两种最流行的解决方案。 一种是3D finfet技术，另一种是FD-SOI。 我们将简要讨论这三种工艺技术。  </p>
 <p>不同类型的工艺技术：</p>
 <ol>
 <li>Bulk CMOS</li>
 <li>FD-SOI（绝缘子上的全耗尽硅）</li>
-<li>FinFET<h3 id="BULK-CMOS"><a href="#BULK-CMOS" class="headerlink" title="BULK CMOS"></a>BULK CMOS</h3>这是一个平面工艺。 Bulk CMOS器件的横截面图如下所示：<br><img src="CMOS_basic_process_overvidw/Cmos_impurity_profile.png" alt="cmos"></li>
+<li>FinFET<h3 id="BULK-CMOS"><a href="#BULK-CMOS" class="headerlink" title="BULK CMOS"></a>BULK CMOS</h3>这是一个平面工艺。 Bulk CMOS器件的横截面图如下所示：<br><img src="/.com//Cmos_impurity_profile.png" alt="cmos"></li>
 </ol>
 
           
